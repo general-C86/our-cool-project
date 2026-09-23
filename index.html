@@ -1,17 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Team Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VÉRANE</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* ШАПКА */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 40px;
+
+            background: transparent;
+            color: white;
+
+            z-index: 100;
+        }
+
+        /* ЛОГОТИП */
+        .logo {
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* НАВИГАЦИЯ */
+        nav {
+            display: flex;
+            gap: 42px;
+            margin-left: 120px;
+        }
+
+        nav a {
+            position: relative;
+
+            color: white;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 300;
+
+            opacity: 0.8;
+
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        /* АКТИВНЫЙ ПУНКТ */
+        nav a.active {
+            opacity: 1;
+        }
+
+        nav a.active::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+
+            width: 100%;
+            height: 1px;
+
+            background: white;
+        }
+
+        /* ПРАВАЯ ЧАСТЬ */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* ПОИСК */
+        .search {
+            width: 18px;
+            height: 18px;
+
+            border: 1px solid white;
+            border-radius: 50%;
+
+            position: relative;
+            opacity: 0.85;
+        }
+
+        .search::after {
+            content: "";
+
+            position: absolute;
+
+            width: 7px;
+            height: 1px;
+
+            background: white;
+
+            right: -5px;
+            bottom: -3px;
+
+            transform: rotate(45deg);
+        }
+
+        /* БУРГЕР */
+        .menu {
+            width: 22px;
+            height: 16px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            cursor: pointer;
+        }
+
+        .menu span {
+            width: 100%;
+            height: 1px;
+            background: white;
+        }
+    </style>
 </head>
+
 <body>
 
     <header>
-        <h1>Мой сайт</h1>
-    </header>
 
-    <nav>
-        <a href="#">Главная</a>
-    </nav>
+        <!-- ЛОГО -->
+        <a href="#" class="logo">VÉRANE</a>
+
+        <!-- НАВИГАЦИЯ -->
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Catalog</a>
+            <a href="#">Contacts</a>
+        </nav>
+
+        <!-- ПОИСК + МЕНЮ -->
+        <div class="header-actions">
+            <div class="search"></div>
+
+            <div class="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+    </header>
 
 </body>
 </html>
